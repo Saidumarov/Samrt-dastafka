@@ -14,12 +14,9 @@ const SendOrder = () => {
     }
 
     try {
-      const response = await axios.post(
-        "https://smart-bot-api-two.vercel.app/send_order",
-        {
-          order,
-        }
-      );
+      const response = await axios.post("http://localhost:3000/send_order", {
+        order,
+      });
       setMessage(response.data.message);
       setOrder("");
     } catch (error) {
